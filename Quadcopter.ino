@@ -1,6 +1,6 @@
 // Include setup libraries.
 #include "MotorSetup.h"
-#include "OpticalSensor.h"
+#include "OpticalSensorSetup.h"
 
 // Define pin ports from Pins.h
 #include "Pins.h"
