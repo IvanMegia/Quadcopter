@@ -15,6 +15,13 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // Run motors.
+  Motor1.writeMicroseconds(180);
+  Motor2.writeMicroseconds(180);
+  Motor3.writeMicroseconds(180);
+  Motor4.writeMicroseconds(180);
+
+  // Introduce a delay on purpose.
+  delay(100);  // [ms].
 
 }
