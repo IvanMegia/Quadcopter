@@ -3,8 +3,6 @@
 extern int pin_Sensor1; extern int pin_Sensor2; extern int pin_Sensor3; extern int pin_Sensor4;
 
 int SensorSetup() {
-  // Initialize serial with 9600 baud to print information.
-  Serial.begin(9600);
   Serial.println("Starting Optical Sensor...");
   
   // Define the defined pins as input pins.
