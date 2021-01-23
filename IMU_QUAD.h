@@ -317,3 +317,11 @@ void getAcceleration(float &x_accel, float &y_accel, float &z_accel){
    y_accel = linearAccelData.acceleration.y;
    z_accel = linearAccelData.acceleration.z;
 }
+
+void getTemperature(int8_t &temperature){
+  /*
+   * Get ambient temperature from the IMU.
+   * Temperature is measured in DEGREES CELSIUS.
+   */
+   temperature = bno.getTemp();
+}
