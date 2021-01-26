@@ -143,6 +143,8 @@ void displaySensorOffsets(const adafruit_bno055_offsets_t &calibData)
 /**************************************************************************/
 void initializeIMU(void)
 {
+    Serial.println("                                                            IMU INITIALIZATION                                                                 ");
+    Serial.println("-----------------------------------------------------------------------------------------------------------------------------------------------");
     Serial.println("Orientation Sensor Test"); Serial.println("");
 
     /* Initialise the sensor */
@@ -255,6 +257,7 @@ void initializeIMU(void)
 
     Serial.println("\n--------------------------------\n");
     delay(500);
+    Serial.println("-----------------------------------------------------------------------------------------------------------------------------------------------");
 }
 
 void getEulerAngles(float &roll_angle, float &pitch_angle, float &yaw_angle){
