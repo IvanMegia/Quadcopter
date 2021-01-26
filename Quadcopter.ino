@@ -29,7 +29,9 @@ int output_pitch = 0, output_roll = 0, output_pitch_rate = 0, output_roll_rate =
 const int max_height = 10;  // [cm].
 
 // Define PID thresholds.
-const float pid_angle_threshold = 1.0, pid_angular_threshold = 0.25;
+const float pid_angle_threshold = 1.5, pid_angular_threshold = 1.25;
+
+boolean obstacle = false;
 
 /*
  * This is the main script for the Quadcopter project. Before uploading the code,
@@ -69,6 +71,8 @@ void setup() {
   // Initialize IMU.
   initializeIMU();
 
+  delay(10000);
+
   // Get initial angles.
   getEulerAngles(initial_roll_angle, initial_pitch_angle, initial_yaw_angle);
 
@@ -88,6 +92,13 @@ void setup() {
 
 void loop() {
 
+  obstacle = detect_obstacles();
+
+  if (not obstacle){
+    stopMotors();
+    delay(10000);
+  }
+
   /**************************************************************************/
   /*
                     Get all information from the IMU.
@@ -104,16 +115,16 @@ void loop() {
   // Get Height in centimeters from the ultrasonic sensor.
   getTemperature(temperature);
   MeasureHeight(temperature, height);
-  Serial.println(height);
+  Serial.print("Height above ground\t");
+  Serial.print(height);
+  Serial.println("\t centimetres.");
 
-  /*
   if (height < max_height){
-    addMicroseconds(5);
+    addMicroseconds(7);
   }
   else if (height > max_height){
-    addMicroseconds(-5);
+    addMicroseconds(-20);
   }
-  */
   
 
   // Get acceleration data.

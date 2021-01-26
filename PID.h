@@ -3,12 +3,12 @@
 
 // Pitch and Roll PID parameters.
 // Pitch conservative and aggressive PID constants.
-double aggKp = 2.350, aggKi = 0., aggKd = 0.025;
-double consKp = 2.05, consKi = 0., consKd = 0.;
+double aggKp = 0.935, aggKi = 0., aggKd = 0.025;
+double consKp = 0.635, consKi = 0., consKd = 0.;
 
 // Angular Roll & Pitch conservative and aggressive PID constants.
-double aggKp_a = 5.750, aggKi_a = 0., aggKd_a = 0.025;
-double consKp_a = 5.350, consKi_a = 0., consKd_a = 0.;
+double aggKp_a = 1.025, aggKi_a = 0., aggKd_a = 0.025;
+double consKp_a = 0.750, consKi_a = 0., consKd_a = 0.;
 
 // Define output limits for the pitch and roll PIDs ({min, max}).
 int pitch_limits[2] = {-100, 200}, roll_limits[2] = {-100, 200};
